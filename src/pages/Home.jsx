@@ -1,10 +1,6 @@
-//TODO: Сделать оформление для корзины и её функционал
-
-
-
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { addToCart } from "../store/slices/cartSlice";
+import { addToCart, getTotals } from "../store/slices/cartSlice";
 
 export const Home = () => {
   const { items, isLoading } = useSelector((state) => state.products);
@@ -12,7 +8,9 @@ export const Home = () => {
   const handleAddToCart = (item) => {
     console.log(item)
     dispatch(addToCart(item));
+    dispatch(getTotals());
   };
+  
 
   return (
     <div className="home-conteiner">
@@ -28,7 +26,7 @@ export const Home = () => {
                 <img src={item.image} alt={item.name} />
                 <div className="details">
                   <span>{item.desc}</span>
-                  <span className="price">{item.price}</span>
+                  <span className="price">{item.price}$</span>
                 </div>
                 <button onClick={() => handleAddToCart(item)}>Add to cart</button>
               </div>

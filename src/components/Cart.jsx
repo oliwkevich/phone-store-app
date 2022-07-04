@@ -79,14 +79,14 @@ export const Cart = () => {
                     </button>
                   </div>
                 </div>
-                <div className="cart-product-price">{item.price}</div>
+                <div className="cart-product-price">{item.price}$</div>
                 <div className="cart-product-quantity">
                   <button onClick={() => handleDecrementItem(item)}>-</button>
                   <div className="count">{item.cartQuantity}</div>
                   <button onClick={() => handleIncrementItem(item)}>+</button>
                 </div>
                 <div className="cart-product-total-price">
-                  ${item.price * item.cartQuantity}
+                  ${ Number(item.price) * item.cartQuantity}
                 </div>
               </div>
             ))}
