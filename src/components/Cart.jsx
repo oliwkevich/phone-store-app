@@ -64,7 +64,7 @@ export const Cart = () => {
             <h3 className="product-title">Телефон</h3>
             <h3 className="price">Цена</h3>
             <h3 className="quantity">Кол-во</h3>
-            <h3 className="total">Общее кол-во</h3>
+            <h3 className="total">Сумма</h3>
           </div>
           <div className="cart-items">
             {cart.cartItems?.map((item) => (
